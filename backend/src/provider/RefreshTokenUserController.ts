@@ -22,14 +22,14 @@ export async function refreshTokenController(request: Request, response: Respons
         response.cookie("refresh_token", refresh_token, {
             httpOnly: true,
             secure: true,
-            sameSite: "lax",
+            sameSite: "none",
             maxAge: (newExpireIn - dayjs().unix()) * 1000,
         });
 
         response.cookie("token", token, {
             httpOnly: true,
             secure: true,
-            sameSite: "lax",
+            sameSite: "none",
             path: "/",
         });
 

@@ -108,7 +108,7 @@ export const colaboradorLogin = async (request: Request, response: Response) => 
         response.cookie('token', token, {
             httpOnly: true,
             secure: false, 
-            sameSite: 'lax',
+            sameSite: 'none',
             path: '/',
         });
 
@@ -118,7 +118,7 @@ export const colaboradorLogin = async (request: Request, response: Response) => 
         response.cookie('refresh_token', refresh_token.id, {
             httpOnly: true,
             secure:false,
-            sameSite: 'lax',
+            sameSite: 'none',
         });
 
         return response.status(200).json({
