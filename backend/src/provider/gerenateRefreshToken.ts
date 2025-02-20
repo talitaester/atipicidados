@@ -4,7 +4,7 @@ import { Prisma, PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 class GenerateRefreshToken {
     async execute(userId:string, userType: 'gerente' | 'colaborador' | 'paciente'){
-        const expireIn = dayjs().add(30, 'seconds').unix()
+        const expireIn = dayjs().add(90, 'seconds').unix()
 
         const data: any = {
             expireIn,
