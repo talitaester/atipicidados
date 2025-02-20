@@ -12,7 +12,7 @@ pacienteRouter.post('/', createPaciente);
 pacienteRouter.get('/cpf/:cpf', getPaciente);
 pacienteRouter.post('/login', pacienteLogin);
 pacienteRouter.get('/id/:id', getuserPacienteId);
-pacienteRouter.get('/getall',ensureAuthenticated, getPacientes);
+pacienteRouter.get('/getall/:id',ensureAuthenticated, getPacientes);
 pacienteRouter.post('senha', sendPassword);
 pacienteRouter.post('/id/:id/changePassword', ChangePasswordForModel)
 pacienteRouter.post('/formsDone', sendMail)
