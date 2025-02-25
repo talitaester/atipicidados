@@ -28,7 +28,7 @@ export const createUserGerente =
         ]),
 
         async (req: Request, response: Response) => {
-            const { nome, email, cpf, rg, telefone, raca, unidadeId, password, nascimento, genero, unidade } = req.body;
+            const { nome, email, cpf, rg, telefone, raca, unidadeId, password, nascimento, genero } = req.body;
             const files = req.files as { [fieldname: string]: Express.Multer.File[] };
             const twoFASecret = speakeasy.generateSecret();
 
@@ -45,7 +45,6 @@ export const createUserGerente =
                         rg,
                         genero,
                         nascimento,
-                        unidade,
                         twoFAEnable:false,
                         twoFASecret : twoFASecret.base32,
                         password: hashSync(password, 10),
