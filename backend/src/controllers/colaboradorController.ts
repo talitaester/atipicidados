@@ -117,7 +117,7 @@ export const colaboradorLogin = async (request: Request, response: Response) => 
 
         response.cookie('refresh_token', refresh_token.id, {
             httpOnly: true,
-            secure:false,
+            secure:true,
             sameSite: 'none',
         });
 
